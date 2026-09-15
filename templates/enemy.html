@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    <title>Создание врага</title>
+</head>
+<body style="font-family: Arial, sans-serif; padding: 30px;">
+
+    <h1>Создание врага</h1>
+
+    <!-- Форма отправки данных -->
+    <form method="POST">
+        <label>Имя чудовища:</label><br>
+        <input type="text" name="monster_name" placeholder="Например: Вася" required>
+        <br><br>
+
+        <label>Вид чудовища:</label><br>
+        <input type="text" name="monster_type" placeholder="Например: Орк, Гоблин, Дракон" required>
+        <br><br>
+
+        <button type="submit">Создать врага</button>
+    </form>
+
+    <!-- Блок с характеристиками врага -->
+    {% if enemy %}
+        <hr>
+        <h3>Параметры призванного чудовища:</h3>
+        <p>Имя: <b>{{ enemy.name }}</b></p>
+        <p>Вид: <b>{{ enemy.monster_type }}</b></p>
+        <p>Здоровье: <span style="color: red; font-weight: bold;">{{ enemy.health }} HP</span></p>
+    {% endif %}
+
+</body>
+</html>

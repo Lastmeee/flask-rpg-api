@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Создание персонажа</title>
+</head>
+<body style="font-family: Arial, sans-serif; padding: 30px;">
+
+    <h2>Создание персонажа</h2>
+
+    <!-- Форма отправляет данные методом POST на этот же адрес /create -->
+    <form method="POST">
+        
+        <!-- 1. Имя героя -->
+        <label>Имя героя:</label><br>
+        <input type="text" name="hero_name" placeholder="Введите имя..." required>
+        <br><br>
+
+        <!-- 2. Выбор класса/роли -->
+        <label>Роль героя:</label><br>
+        <select name="hero_role">
+            <option value="Рыцарь">Рыцарь</option>
+            <option value="Маг">Маг</option>
+            <option value="Целитель">Целитель</option>
+            <option value="Лучник">Лучник</option>
+        </select>
+        <br><br>
+
+        <!-- 3. Сила героя (строго name="power") -->
+        <label>Боевая мощь (сила):</label><br>
+        <input type="number" name="hero_power" placeholder="От 1 до 100" min="1" max="100" required>
+        <br><br>
+
+        <button type="submit" style="padding: 8px 16px; cursor: pointer;">
+            Создать персонажа
+        </button>
+    </form>
+
+    <br>
+    <a href="{{ url_for('home') }}">← На главную</a>
+
+</body>
+</html>

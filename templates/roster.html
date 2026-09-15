@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    <title>Список бойцов</title>
+</head>
+<body style="font-family: Arial, sans-serif; padding: 30px;">
+
+    <h1>Список зарегистрированных героев</h1>
+
+    <!-- Рендерим список через Jinja2 -->
+    <ul>
+        {% for h in heroes %}
+            <b>{{ h.name }}</b>
+            {{ h.role }}
+            {{ h.health }} HP
+        {% endfor %}
+    </ul>
+
+    <ul>
+    {% for h in heroes %}
+        <li>
+            <b>{{ h.name }}</b> — {{ h.role }} (<span style="color: green;">{{ h.health }} HP</span>)
+            <a href="{{ url_for('hero_stats', hero_name=h.name, power=90) }}">Выйти на арену</a>
+        </li>
+    {% endfor %}
+</ul>
+
+</body>
+</html>

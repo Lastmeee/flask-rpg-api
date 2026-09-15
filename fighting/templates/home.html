@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Главная страница</title>
+</head>
+<body style="font-family: Arial, sans-serif; margin: 40px;">
+
+    <!-- 1. Заголовок ровно по центру -->
+    <h1 style="text-align: center;">Главная страница</h1>
+
+    <!-- 2. Блок чуть ниже и выровнен по левому краю -->
+    <div style="margin-top: 40px; text-align: left;">
+        <p style="font-size: 18px; margin-bottom: 10px;">Здесь вы можете создать персонажа</p>
+        
+        <!-- Кнопка, ведущая на страницу создания персонажа -->
+        <a href="{{ url_for('create_hero') }}">
+            <button style="padding: 10px 18px; font-size: 15px; cursor: pointer;">
+                Создать персонажа
+            </button>
+        </a>
+
+        
+    </div>
+    <div style="margin-top: 15px; text-align: left;">
+        <!-- Кнопка списка героев-->
+         <a href="{{url_for('show_heroes') }}">
+            <button style="padding: 10px 18px; font-size: 15px; cursor: pointer;">
+                Список персонажей
+            </button>
+        </a>
+    </div>
+
+
+    <!-- Кнопка, ведущая на страницу создания противника -->
+     <div style="margin-top: -100px; text-align: right;">
+        <a href="{{ url_for('create_enemy') }}">
+            <button style="padding: 10px 18px; font-size: 15px; cursor: pointer;">
+                Создать противника
+            </button>
+        </a>
+    </div>
+
+    <div style="margin-top: 20px; text-align: right;">
+        <!-- Кнопка списка врагов-->
+         <a href="{{url_for('show_enemies') }}">
+            <button style="padding: 10px 18px; font-size: 15px; cursor: pointer;">
+                Список персонажей
+            </button>
+        </a>
+    </div>
+
+
+    <div style="margin-top: -100px; text-align: center ;">
+        <!-- Кнопка списка врагов-->
+         <a href="{{url_for('arena') }}">
+            <button style="padding: 15px 20px; font-size: 30px; cursor: pointer;">
+                Арена
+            </button>
+        </a>
+    </div>
+
+
+</body>
+</html>

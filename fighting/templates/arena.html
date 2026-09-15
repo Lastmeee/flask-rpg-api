@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Боевая арена</title>
+</head>
+<body style="font-family: Arial, sans-serif; padding: 40px; text-align: center;">
+
+    <h1>Боевая арена</h1>
+    <p>Выберите бойцов для смертельного поединка</p>
+
+    <!-- Форма отправки выбранных бойцов -->
+    <form method="POST" action="#" style="margin-top: 40px;">
+
+        <!-- Контейнер: распределяет колонки слева направо и центрирует их по вертикали -->
+        <div style="display: flex; justify-content: center; align-items: center; gap: 40px;">
+            
+            <!-- Левая колонка: выбор героя -->
+            <div style="text-align: left; width: 220px; border: 1px solid #ccc; padding: 20px; border-radius: 8px;">
+                <label for="hero_select"><b>Выберите героя:</b></label><br><br>
+                <select name="selected_hero" id="hero_select" style="width: 100%; padding: 8px;" required>
+                    {% if heroes %}
+                        {% for h in heroes %}
+                            <!-- Значением передаем имя, а отображаем имя и силу/класс -->
+                            <option value="{{ h.h_name }}">
+                                {{ h.h_name }} ({{ h.h_role }})
+                            </option>
+                        {% endfor %}
+                    {% else %}
+                        <option disabled selected value="">Героев нет</option>
+                    {% endif %}
+                </select>
+            </div>
+
+            <!-- Центр: кнопка «Бой» -->
+            <div>
+                <button type="submit" style="padding: 15px 35px; font-size: 18px; font-weight: bold; background-color: #d32f2f; color: white; border: none; border-radius: 6px; cursor: pointer;">
+                    ⚔️ БОЙ
+                </button>
+            </div>
+
+            <!-- Правая колонка: выбор противника -->
+            <div style="text-align: left; width: 220px; border: 1px solid #ccc; padding: 20px; border-radius: 8px;">
+                <label for="enemy_select"><b>Выберите врага:</b></label><br><br>
+                <select name="selected_enemy" id="enemy_select" style="width: 100%; padding: 8px;" required>
+                    {% if enemies %}
+                        {% for e in enemies %}
+                            <option value="{{ e.e_name }}">
+                                {{ e.e_name }} (Сила: {{ e.e_power }})
+                            </option>
+                        {% endfor %}
+                    {% else %}
+                        <option disabled selected value="">Врагов нет</option>
+                    {% endif %}
+                </select>
+            </div>
+
+        </div>
+
+    </form>
+
+    <br><br>
+    <a href="{{ url_for('home') }}">← На главную</a>
+
+</body>
+</html>

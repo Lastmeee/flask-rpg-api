@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Карточка героя</title>
+</head>
+<body style="font-family: Arial; padding: 30px;">
+    <h1>Имя: {{ hero_name }}</h1>
+    <p>Профессия: <b>{{ hero_role }}</b></p>
+    <p>Здоровье: {{ hero_hp }} HP</p>
+
+    <!-- Проверка состояния здоровья -->
+    {% if hero_hp > 0 %}
+        <p style="color: green; font-weight: bold;">Статус: Готов к бою!</p>
+    {% else %}
+        <p style="color: red; font-weight: bold;">Статус: Герой пал в бою...</p>
+    {% endif %}
+
+    <hr>
+    <h3>Рюкзак героя:</h3>
+    <ul>
+        {% if items %}
+            {% for item in items %}
+                <li>{{ item }}</li>
+            {% endfor %}
+        {% else %}
+            <p> Инвентарь пуст</p>
+        {% endif %}
+    </ul>
+</body>
+</html>

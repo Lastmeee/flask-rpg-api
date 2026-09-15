@@ -1,0 +1,12 @@
+<h1>Боевая арена</h1>
+
+<h2>Боец: {{ hero_name }} (Мощь: {{ power }})</h2>
+
+{% if power > 80 %}
+    <p style="color: green;">Этот боец — легендарный чемпион!</p>
+{% elif power >= 40 %}
+    <p style="color: blue;">Крепкий воин, готов к бою.</p>
+{% else %}
+    <p style="color: red;">Слишком слаб для арены, его разорвут!</p>
+{% endif %}
+

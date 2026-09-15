@@ -1,0 +1,9 @@
+{
+    "player": "Nikita",
+    "game": "Counter-Strike 2",
+    "matches": [
+        {"map": "Mirage", "kills": 24, "deaths": 12, "win": true},
+        {"map": "Dust 2", "kills": 14, "deaths": 18, "win": false},
+        {"map": "Inferno", "kills": 30, "deaths": 10, "win": true}
+    ]
+}

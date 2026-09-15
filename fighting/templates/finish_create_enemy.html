@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Противник создан!</title>
+</head>
+<body style="font-family: Arial, sans-serif; padding: 40px; text-align: center;">
+
+    <h1 style="color: #2e7d32;">Успех! Персонаж создан</h1>
+
+    <!-- Выводим параметры героя через точку из объекта hero -->
+    <div style="margin: 25px auto; padding: 20px; border: 2px solid #4caf50; border-radius: 8px; width: 320px; background-color: #f9f9f9; text-align: left;">
+        <p><b>Имя:</b> {{ enemy.e_name }}</p>
+        <p><b>Сила:</b> {{ enemy.e_power }}</p>
+        <p><b>Здоровье:</b> {{ enemy.e_health }} HP</p>
+    </div>
+
+    <!-- Кнопка назад на страницу создания персонажа -->
+    <a href="{{ url_for('create_enemy') }}">
+        <button style="padding: 10px 20px; font-size: 15px; cursor: pointer;">
+            ← Вернуться к созданию персонажа
+        </button>
+    </a>
+
+</body>
+</html>

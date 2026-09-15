@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Создание героя</title>
+</head>
+<body style="font-family: Arial; padding: 30px;">
+    <h2>Создай своего персонажа</h2>
+
+    <form method="POST">
+        <label>Имя героя:</label><br>
+        <input type="text" name="hero_name" placeholder="Введите имя..." required>
+        <br><br>
+
+        <label>Сила героя:</label><br>
+        <input type="Int" name="power" placeholder="Введите силу (1-100)..." min="1" max="100" required>
+        <br><br>
+
+        <label>Выберите роль:</label><br>
+        <select name="hero_role">
+            <option value="Рыцарь">Рыцарь</option>
+            <option value="Маг">Маг</option>
+            <option value="Целитель">Целитель</option>
+        </select>
+        <br><br>
+
+        <button type="submit">Создать героя</button>
+    </form>
+</body>
+</html>

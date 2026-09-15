@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Список героев</title>
+</head>
+<body style="font-family: Arial, sans-serif; padding: 40px;">
+
+    <h1>Список всех созданных героев</h1>
+
+    <!-- Проверяем, есть ли вообще герои в списке -->
+    {% if heroes %}
+        <ul>
+            {% for h in heroes %}
+                <li style="margin-bottom: 12px; font-size: 17px;">
+                    <b>{{ h.h_name }}</b> — {{ h.h_role }} | Уровень: <b>{{ h.h_power }}</b> ({{ h.h_health }} HP)
+                </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p style="color: gray;">Пока не создано ни одного героя.</p>
+    {% endif %}
+
+    <br>
+    <!-- Кнопки навигации -->
+    <a href="{{ url_for('create_hero') }}">
+        <button style="padding: 8px 16px; cursor: pointer;">+ Создать нового героя</button>
+    </a>
+    &nbsp;
+    <a href="{{ url_for('home') }}">На главную</a>
+
+</body>
+</html>
